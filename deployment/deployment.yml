@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: analytics
-        image: isjustintime/cd12355-admin-api:0.1.0
+        image: microservices/cd12355-admin-api:0.1.0
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
