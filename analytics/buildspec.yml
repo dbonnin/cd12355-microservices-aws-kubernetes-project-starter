@@ -1,8 +1,4 @@
 version: 0.2
-env:
-  secrets-manager:
-    DOCKERHUB_USERNAME: dbonnin
-    DOCKERHUB_PASSWORD: Well54ma
 phases:
   pre_build:
     commands:
