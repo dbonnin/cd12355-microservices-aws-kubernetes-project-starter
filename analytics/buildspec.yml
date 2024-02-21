@@ -1,12 +1,13 @@
 version: 0.2
+env:
+  secrets-manager:
+    DOCKERHUB_USERNAME: dbonnin
+    DOCKERHUB_PASSWORD: Well54ma
 phases:
   pre_build:
     commands:
-      - echo $AWS_ACCOUNT_ID
-      - echo $AWS_DEFAULT_REGION
-      - echo $IMAGE_REPO_NAME
-      - echo $CODEBUILD_BUILD_NUMBER
-      - echo Loggin into ECR      
+      - echo Logging in to Docker Hub...
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD    
       - echo Loggin into ECR
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
   build:
