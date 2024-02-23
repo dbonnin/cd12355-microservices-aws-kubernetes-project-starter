@@ -16,18 +16,18 @@ spec:
     spec:
       containers:
       - name: analytics
-        image: microservices/cd12355-admin-api:0.1.0
+        image: 873459701832.dkr.ecr.us-east-2.amazonaws.com/microservices:18
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
             path: /health_check
-            port: 5151
+            port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 2
         readinessProbe:
           httpGet:
             path: "/readiness_check"
-            port: 5151
+            port: 5153
           initialDelaySeconds: 5
           timeoutSeconds: 5
         env:
