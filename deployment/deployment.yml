@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: analytics
-        image: 873459701832.dkr.ecr.us-east-2.amazonaws.com/microservices:18
+        image: 873459701832.dkr.ecr.us-east-2.amazonaws.com/microservices:20
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
